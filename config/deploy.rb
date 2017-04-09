@@ -3,8 +3,9 @@ lock '3.7.2'
 set :application, 'mastodon'
 set :repo_url, 'https://github.com/tootsuite/mastodon.git'
 set :branch, 'master'
-set :rbenv_type, :user
-set :rbenv_ruby, File.read('.ruby-version').strip
+gemset = File.read('.ruby-gemset').strip
+gemset = fetch(:application) if gemset.empty?
+set :rvm_ruby_version, "#{File.read('.ruby-version').strip}@#{gemset}"
 set :migration_role, :app
 
 append :linked_files, '.env.production'

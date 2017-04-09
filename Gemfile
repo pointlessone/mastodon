@@ -83,9 +83,12 @@ group :development do
 
   gem 'capistrano'
   gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
+  gem 'capistrano-rvm'
   gem 'capistrano-yarn'
   gem 'capistrano-faster-assets', '~> 1.0'
+  gem 'rbnacl', '>= 3.2', '< 5.0'
+  gem 'rbnacl-libsodium'
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 end
 
 group :production do
