@@ -6,8 +6,9 @@ set :repo_url, ENV.fetch('REPO', 'https://github.com/tootsuite/mastodon.git')
 set :branch, ENV.fetch('BRANCH', 'master')
 
 set :application, 'mastodon'
-set :rbenv_type, :user
-set :rbenv_ruby, File.read('.ruby-version').strip
+gemset = File.read('.ruby-gemset').strip
+gemset = fetch(:application) if gemset.empty?
+set :rvm_ruby_version, "#{File.read('.ruby-version').strip}@#{gemset}"
 set :migration_role, :app
 
 append :linked_files, '.env.production', 'public/robots.txt'

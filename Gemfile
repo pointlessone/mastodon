@@ -134,11 +134,16 @@ group :development do
 
   gem 'capistrano', '~> 3.11'
   gem 'capistrano-rails', '~> 1.4'
-  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-rvm'
   gem 'capistrano-yarn', '~> 2.0'
 
   gem 'derailed_benchmarks'
   gem 'stackprof'
+
+  gem 'rbnacl', '>= 3.2', '< 5.0'
+  gem 'rbnacl-libsodium'
+  gem 'ed25519', '>= 1.2', '< 2.0'
+  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 end
 
 group :production do
