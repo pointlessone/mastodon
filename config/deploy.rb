@@ -12,4 +12,4 @@ set :rvm_ruby_version, "#{File.read('.ruby-version').strip}@#{gemset}"
 set :migration_role, :app
 
 append :linked_files, '.env.production', 'public/robots.txt'
-append :linked_dirs, 'vendor/bundle', 'node_modules', 'public/system'
+append :linked_dirs, 'vendor/bundle', 'public/system'
