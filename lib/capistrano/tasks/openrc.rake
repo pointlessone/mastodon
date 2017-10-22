@@ -40,9 +40,9 @@ namespace :openrc do
 
   def service(service, command)
     if fetch(:openrc_use_sudo)
-      sudo :service, service, command
+      sudo 'rc-service', service, command
     else
-      execute :service, service, command
+      execute 'rc-service', service, command
     end
   end
 
